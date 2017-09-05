@@ -12,7 +12,7 @@
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently -t \"HH:mm:ss\" --prefix \"[{name} {time}]\" --names \"SERVER,CLIENT\" -c \"bgYellow.bold,bgBlue.bold\" \"npm run server\" \"npm run client\"",
-    "build": "react-scripts build",
+    "build": "npm run build --prefix client",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client "
   },
   "author": "",
