@@ -15,6 +15,10 @@
     "build": "npm run build --prefix client",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false cd client/ && npm install && npm run build"
   },
+  "cacheDirectories": [
+    "node_modules",
+    "client/node_modules"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
