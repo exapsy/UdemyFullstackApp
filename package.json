@@ -13,7 +13,9 @@
     "client": "npm run start --prefix client",
     "dev": "concurrently -t \"HH:mm:ss\" --prefix \"[{name} {time}]\" --names \"SERVER,CLIENT\" -c \"bgYellow.bold,bgBlue.bold\" \"npm run server\" \"npm run client\"",
     "build": "npm run build --prefix client",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "cacheDirectories": [
     "node_modules",
@@ -30,10 +32,12 @@
     "nodemon": "^1.11.0",
     "passport": "^0.4.0",
     "passport-google-oauth": "^1.0.0",
-    "stripe": "^4.24.1"
+    "stripe": "^4.24.1",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "babel": "*",
     "babel-core": "*"
-  }
+  },
+  "snyk": true
 }
